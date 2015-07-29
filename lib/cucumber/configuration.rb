@@ -1,6 +1,6 @@
 require 'cucumber/constantize'
 require 'cucumber/cli/rerun_file'
-require 'gherkin/tag_expression'
+require 'cucumber/core/gherkin/tag_expression'
 
 module Cucumber
   # The base class for configuring settings for a Cucumber run.
@@ -81,7 +81,7 @@ module Cucumber
 
     # todo: remove
     def tag_expression
-      Gherkin::TagExpression.new(@options[:tag_expressions])
+      Cucumber::Core::Gherkin::TagExpression.new(@options[:tag_expressions])
     end
 
     def tag_limits
